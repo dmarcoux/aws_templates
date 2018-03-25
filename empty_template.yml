@@ -1,0 +1,9 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Empty template for AWS CloudFormation
+Parameters:
+  SomeParameter:
+    Type: String
+    Description: >-
+      It is a parameter
+    Default: default_value
+Resources:

@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Setup environment for other scripts. Source this script in other scripts
+
+# -e: Exit on commands not found
+# -u: Exit on unset variables
+# -x: Write to standard error a trace for each command after it expands the command and before it executes it
+set -eux
+
+# Check if aws CLI is installed, just in case people don't read the README
+if ! type aws > /dev/null 2>&1; then
+  echo 'Install aws CLI before running scripts. Refer to the README'
+
+  exit 1;
+fi
+
+# AWS related ENV variables in alphabetical order
+AWS_REGION="eu-central-1"
+CLOUD_FORMATION_FILENAME="empty_template.yml"
+CLOUD_FORMATION_STACK_NAME="Service-project_name"
+ECR_REPOSITORY_NAME="project_name"
+S3_BUCKET="service-project_name"
+
+# Path related ENV variables, relative to the directory of this script
+CLOUD_FORMATION_FILE="./../$CLOUD_FORMATION_FILENAME"

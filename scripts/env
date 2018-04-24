@@ -6,21 +6,33 @@
 # -x: Write to standard error a trace for each command after it expands the command and before it executes it
 set -eux
 
-# Check if aws CLI is installed, just in case people don't read the README
-if ! type aws > /dev/null 2>&1; then
-  echo 'Install aws CLI before running scripts. Refer to the README'
+# Check if npm and aws CLIs are installed, just in case people don't read the README
+if ! type npm > /dev/null 2>&1 || ! type aws > /dev/null 2>&1; then
+  echo 'Install npm and aws CLIs before running scripts. Refer to the README'
 
   exit 1;
 fi
 
 # AWS related ENV variables in alphabetical order
+API_GATEWAY_FILENAME="api.yml"
 AWS_REGION="eu-central-1"
+BACKEND_S3_BUCKET="lambda--project_name"
 CLOUD_FORMATION_FILENAME="empty_template.yml"
 CLOUD_FORMATION_STACK_NAME="Service-project_name"
 ECR_REPOSITORY_NAME="project_name"
+LAMBDA_FUNCTION_FILENAME="lambda.js"
+LAMBDA_FUNCTION_NAME="project_name"
+LAMBDA_FUNCTION_ZIP_FILENAME="lambda-function.zip"
 PIPELINE_NAME="project_name-relevant_short_details"
 S3_BUCKET="service-project_name"
+SAM_LOCAL_API_HOST="localhost"
+SAM_LOCAL_API_PORT="1234"
 
 # Path related ENV variables, relative to the directory of this script
 PROJECT_ROOT="./.."
+API_GATEWAY_FILE="$PROJECT_ROOT/$API_GATEWAY_FILENAME"
 CLOUD_FORMATION_FILE="$PROJECT_ROOT/$CLOUD_FORMATION_FILENAME"
+EVENT_JSON_FILE="$PROJECT_ROOT/event.json"
+LAMBDA_FUNCTION_ZIP_FILE="$PROJECT_ROOT/$LAMBDA_FUNCTION_ZIP_FILENAME"
+NODE_MODULES_DIRNAME="node_modules"
+NODE_MODULES_DIR="$PROJECT_ROOT/$NODE_MODULES_DIRNAME"

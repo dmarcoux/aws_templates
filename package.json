@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "main": "./lambda.js",
+  "scripts": {},
+  "//": "The AWS SDK is preinstalled on AWS Lambda"
+}

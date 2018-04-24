@@ -21,4 +21,5 @@ ECR_REPOSITORY_NAME="project_name"
 S3_BUCKET="service-project_name"
 
 # Path related ENV variables, relative to the directory of this script
-CLOUD_FORMATION_FILE="./../$CLOUD_FORMATION_FILENAME"
+PROJECT_ROOT="./.."
+CLOUD_FORMATION_FILE="$PROJECT_ROOT/$CLOUD_FORMATION_FILENAME"

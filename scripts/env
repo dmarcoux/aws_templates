@@ -18,6 +18,7 @@ AWS_REGION="eu-central-1"
 CLOUD_FORMATION_FILENAME="empty_template.yml"
 CLOUD_FORMATION_STACK_NAME="Service-project_name"
 ECR_REPOSITORY_NAME="project_name"
+PIPELINE_NAME="project_name-relevant_short_details"
 S3_BUCKET="service-project_name"
 
 # Path related ENV variables, relative to the directory of this script

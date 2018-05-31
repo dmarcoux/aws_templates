@@ -7,3 +7,10 @@ Parameters:
       It is a parameter
     Default: default_value
 Resources:
+Outputs:
+  MyOutput:
+    Description: >-
+      This is an output
+    Value: abcdef
+    Export:
+      Name: MyExportedOutput # Import in another stack with !ImportValue MyExportedOutput
